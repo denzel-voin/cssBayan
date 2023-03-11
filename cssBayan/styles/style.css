@@ -115,7 +115,7 @@ img {
     margin: 1rem auto;
   }
   .plus_btn {
-    background: url(/plus.svg) center/cover no-repeat;
+    background: url(../img/plus.svg) center/cover no-repeat;
   }
   .accordeon {
     color:black;
