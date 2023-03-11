@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-family: Roboto;
+  font-size: calc(10 / 16 * 100%);
+  background-color: #23367D;
+}
+
+.accordeon {
+  max-width: 60%;
+  margin: 2rem auto;
+  background-color:rgb(250, 226, 255);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.accordeon__item {
+  cursor: pointer;
+  border-bottom: .3rem solid grey;
+  text-align: center;
+  transition: color .3s ease-in-out;
+}
+
+.accordeon__item:active .acc_text .acc_img {
+  background-color: grey;
+  z-index: 1;
+  opacity: .6;
+}
+
+.accordeon__item:active .accordeon__tittle {
+  opacity: .5;
+}
+
+h1 {
+  border-bottom: .3rem solid grey;
+  color:black;
+  padding-bottom: 3rem;
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.acc_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordeon__tittle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+}
+
+.accordeon__input {
+  display: none;
+}
+
+.accordeon:hover {
+  color:black;
+}
+
+.accordeon {
+  color:blue;
+  transition: color .1s ease-in-out;
+}
+
+img {
+  cursor: pointer;
+}
+
+.plus_btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  transition: all .3s ease-in-out;
+}
+
+.accordeon:hover .plus_btn {
+  background: url(../img/plus.svg) center/cover no-repeat;
+}
+
+.acc_img {
+  width: 0;
+  transition: all .4s ease-in-out;
+}
+
+.accordeon__input:checked ~ .acc_text .acc_img {
+  width: 50%;
+}
+
+.accordeon__input:checked + label .plus_btn {
+  transform: rotate(45deg);
+}
+
+.accordeon__item:hover .acc_text {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 820px) {
+  html {
+    font-size: 50%;
+  }
+  .accordeon__input:checked ~ .acc_text .acc_img {
+    width: 70%;
+  }
+  .accordeon {
+    max-width: 80%;
+    margin: 1rem auto;
+  }
+  .plus_btn {
+    background: url(/plus.svg) center/cover no-repeat;
+  }
+  .accordeon {
+    color:black;
+  }
+}
+
+@media (max-width: 380px) {
+  html {
+    font-size: 30%;
+  }
+  .accordeon__input:checked ~ .acc_text .acc_img {
+    width: 80%;
+  }
+  .accordeon {
+    max-width: 90%;
+    margin: .5rem auto;
+  }
+}
+
+@media (min-width: 821px) {
+  html {
+    font-size: 80%;
+  }
+  .accordeon__item:hover .acc_text .acc_img {
+    width: 70%;
+  }
+  .accordeon__input:checked ~ .acc_text .acc_img {
+    width: 70%;
+  }
+  .accordeon {
+    max-width: 60%;
+    margin: 3rem auto;
+  }
+  .accordeon__item:hover .acc_text .acc_img {
+  width: 70%;
+  }
+  .accordeon__item:hover .plus_btn {
+  transform: rotate(45deg);
+  }
+}
